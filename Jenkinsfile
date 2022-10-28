@@ -7,6 +7,10 @@ pipeline {
     }
 
     environment {
+        APP = 'jenkins-build'
+        DOCKER_REGISTRY = 'acelectic'
+        DOCKER_IMAGE = "${DOCKER_REGISTRY}/${APP}"
+        REGISTRY_CREDENTIALS = "docker-hub-token"
         GITHUB_TOKEN = credentials('github-token')
         GIT_COMMIT_VERSION = "${env.GIT_COMMIT}"
     }
@@ -107,9 +111,16 @@ pipeline {
                 sh '''
                 echo $VERSION
                 '''
-        
-                dockerImage = docker.build("test:${GIT_COMMIT_VERSION}")
-                // dockerImage.push()
+                sh '''
+                yarn install
+                npx semantic-release
+                '''
+                env.TARGET_TAG = sh(script:'cat VERSION || echo ""', returnStdout: true).trim()
+
+                docker.withRegistry("https://${DOCKER_REGISTRY}", REGISTRY_CREDENTIALS) {
+                    dockerImage = docker.build("${DOCKER_IMAGE}:${GIT_COMMIT_VERSION}", "--build-arg VERSION TARGET_TAG ./dockerfiles")
+                    dockerImage.push()
+                }
             }
         }
     }
@@ -127,25 +138,25 @@ pipeline {
         //     }
         // }
 
-      //   stage('Tag Docker Image') {
-      //       when { allOf { branch 'main'; not { equals expected: "", actual: env.TARGET_TAG } } }
-      //       steps {
-      //           script {
-      //               docker.withRegistry("https://${DOCKER_REGISTRY}", REGISTRY_CREDENTIALS) {
-      //                   dockerImage = docker.image("${DOCKER_IMAGE}:${GIT_COMMIT_VERSION}")
-      //                   dockerImage.pull()
+        stage('Tag Docker Image') {
+            when { allOf { branch 'main'; not { equals expected: "", actual: env.TARGET_TAG } } }
+            steps {
+                script {
+                    docker.withRegistry("https://${DOCKER_REGISTRY}", REGISTRY_CREDENTIALS) {
+                        dockerImage = docker.image("${DOCKER_IMAGE}:${GIT_COMMIT_VERSION}")
+                        dockerImage.pull()
 
-      //                   sh '''
-      //                   docker tag ${DOCKER_IMAGE}:${GIT_COMMIT_VERSION} ${DOCKER_IMAGE}:$TARGET_TAG
-      //                   '''
+                        sh '''
+                        docker tag ${DOCKER_IMAGE}:${GIT_COMMIT_VERSION} ${DOCKER_IMAGE}:$TARGET_TAG
+                        '''
 
-      //                   targetImage = docker.image("${DOCKER_IMAGE}:${TARGET_TAG}")
-      //                   targetImage.push()
-      //                   targetImage.push("latest")
-      //               }
-      //           }
-      //       }
-      //   }
+                        targetImage = docker.image("${DOCKER_IMAGE}:${TARGET_TAG}")
+                        targetImage.push()
+                        targetImage.push("latest")
+                    }
+                }
+            }
+        }
 
       //   stage('Deploy Dev') {
       //       when { allOf { branch 'main'; not { equals expected: "", actual: env.TARGET_TAG } } }
