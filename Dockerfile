@@ -1,5 +1,7 @@
 FROM node:15.11.0-alpine3.10 as build
 ARG APP_ENV
+ARG VERSION
+ENV VERSION=${VERSION}
 WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn

@@ -1,5 +1,6 @@
 pipeline {
-    agent { label 'jenkins_agent' }
+    // agent { label 'jenkins_agent' }
+    agent any
 
     tools {
         nodejs "node-16"
@@ -10,104 +11,121 @@ pipeline {
         GIT_COMMIT_VERSION = "${env.GIT_COMMIT}"
     }
 
+    // options {
+    //     skipDefaultCheckout(true)
+    // }
+
     stages {
-
-        stage('Install') {
-            when {
-                anyOf {
-                    changeRequest target: 'main'
-                    branch 'main'
-                }
-            }
+        stage('Debug') {
             steps {
-                scmSkip(deleteBuild: false)
+
+                // git branch: 'main', url: 'https://github.com/acelectic/jenkins-build.git'
+                // scmSkip(deleteBuild: false)
                 script {
                     sh """
                     yarn install
                     """
                 }
-            }
-        }
 
-        stage('Lint') {
-            when { changeRequest target: 'main' }
-            steps {
-                script {
-                    sh """
-                    yarn run lint:ci
-                    """
-                }
+        }
+    }
+     
+    stage('Install') {
+        when {
+            anyOf {
+                changeRequest target: 'main'
+                branch 'main'
             }
         }
+        steps {
+            // scmSkip(deleteBuild: false)
+            script {
+                sh """
+                yarn install
+                """
+            }
+        }
+    }
 
-        stage('Test') {
-            when {
-                anyOf {
-                    changeRequest target: 'main'
-                    branch 'main'
-                }
-            }
-            steps {
-                script {
-                  //   sh """
-                  //   npm run test:cov
-                  //   """
-                  sh """
-                    echo run test:cov
-                    """
-                }
+    stage('Lint') {
+        when { changeRequest target: 'main' }
+        steps {
+            script {
+                sh """
+                yarn run lint:ci
+                """
             }
         }
+    }
 
-        stage('Check Code Quality') {
-            when { branch 'main' }
-            steps {
-                script {
-                   sh """
-                    echo Check Code Quality
-                    """
-                  //   def scannerHome = tool 'sonarqube-scanner';
-                  //   withSonarQubeEnv("sonarqube") {
-                  //       sh """
-                  //       ${scannerHome}/bin/sonar-scanner \
-                  //       -Dsonar.projectKey=$APP \
-                  //       -Dsonar.sources=src \
-                  //       -Dsonar.tests=src \
-                  //       -Dsonar.test.inclusions=src/**/*.spec.ts,src/**/*.test.ts \
-                  //       -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
-                  //       -Dsonar.testExecutionReportPaths=coverage/test-reporter.xml
-                  //       """
-                  //   }
-                }
+    stage('Test') {
+        when {
+            anyOf {
+                changeRequest target: 'main'
+                branch 'main'
             }
         }
+        steps {
+            script {
+                //   sh """
+                //   npm run test:cov
+                //   """
+                sh """
+                echo run test:cov
+                """
+            }
+        }
+    }
 
-        stage('Build Docker Image') {
-            when { changeRequest target: 'main' }
-            steps {
-                script {
-                  sh '''
-                  echo $
-                  '''
-         
-                  dockerImage = docker.build("test:${GIT_COMMIT_VERSION}")
-                  dockerImage.push()
-                }
+    stage('Check Code Quality') {
+        when { branch 'main' }
+        steps {
+            script {
+                sh """
+                echo Check Code Quality
+                """
+                //   def scannerHome = tool 'sonarqube-scanner';
+                //   withSonarQubeEnv("sonarqube") {
+                //       sh """
+                //       ${scannerHome}/bin/sonar-scanner \
+                //       -Dsonar.projectKey=$APP \
+                //       -Dsonar.sources=src \
+                //       -Dsonar.tests=src \
+                //       -Dsonar.test.inclusions=src/**/*.spec.ts,src/**/*.test.ts \
+                //       -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+                //       -Dsonar.testExecutionReportPaths=coverage/test-reporter.xml
+                //       """
+                //   }
             }
         }
+    }
 
-        stage('Release') {
-            when { branch 'main' }
-            steps {
-                script {
-                    sh '''
-                    yarn install
-                    npx semantic-release
-                    '''
-                    env.TARGET_TAG = sh(script:'cat VERSION || echo ""', returnStdout: true).trim()
-                }
+    stage('Build Docker Image') {
+        when { changeRequest target: 'main' }
+        steps {
+            script {
+                sh '''
+                echo $VERSION
+                '''
+        
+                dockerImage = docker.build("test:${GIT_COMMIT_VERSION}")
+                // dockerImage.push()
             }
         }
+    }
+
+        // stage('Release') {
+        //     when { branch 'main' }
+        //     steps {
+        //         script {
+        //             sh '''
+        //             yarn install
+        //             npx semantic-release
+        //             '''
+        //             env.TARGET_TAG = sh(script:'cat VERSION || echo ""', returnStdout: true).trim()
+        //         }
+        //     }
+        // }
 
       //   stage('Tag Docker Image') {
       //       when { allOf { branch 'main'; not { equals expected: "", actual: env.TARGET_TAG } } }
@@ -145,9 +163,9 @@ pipeline {
       //       }
       //   }
     }
-    post {
-        always {
-            deleteDir()
-        }
-    }
+    // post {
+    //     always {
+    //         deleteDir()
+    //     }
+    // }
 }
