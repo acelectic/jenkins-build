@@ -1,0 +1,209 @@
+@font-face {
+  font-family: "Sarabun-Bold";
+  src: local("Sarabun-Bold"),
+    url(./assets/fonts/sarabun/Sarabun-Bold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-BoldItalic";
+  src: local("Sarabun-BoldItalic"),
+    url(./assets/fonts/sarabun/Sarabun-BoldItalic.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-ExtraBold";
+  src: local("Sarabun-ExtraBold"),
+    url(./assets/fonts/sarabun/Sarabun-ExtraBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-ExtraBoldItalic";
+  src: local("Sarabun-ExtraBoldItalic"),
+    url(./assets/fonts/sarabun/Sarabun-ExtraBoldItalic.woff2)
+      format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-ExtraLight";
+  src: local("Sarabun-ExtraLight"),
+    url(./assets/fonts/sarabun/Sarabun-ExtraLight.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-ExtraLightItalic";
+  src: local("Sarabun-ExtraLightItalic"),
+    url(./assets/fonts/sarabun/Sarabun-ExtraLightItalic.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-Italic";
+  src: local("Sarabun-Italic"),
+    url(./assets/fonts/sarabun/Sarabun-Italic.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-Light";
+  src: local("Sarabun-Light"),
+    url(./assets/fonts/sarabun/Sarabun-Light.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-LightItalic";
+  src: local("Sarabun-LightItalic"),
+    url(./assets/fonts/sarabun/Sarabun-LightItalic.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-Medium";
+  src: local("Sarabun-Medium"),
+    url(./assets/fonts/sarabun/Sarabun-Medium.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-MediumItalic";
+  src: local("Sarabun-MediumItalic"),
+    url(./assets/fonts/sarabun/Sarabun-MediumItalic.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-Regular";
+  src: local("Sarabun-Regular"),
+    url(./assets/fonts/sarabun/Sarabun-Regular.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-SemiBold";
+  src: local("Sarabun-SemiBold"),
+    url(./assets/fonts/sarabun/Sarabun-SemiBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-SemiBoldItalic";
+  src: local("Sarabun-SemiBoldItalic"),
+    url(./assets/fonts/sarabun/Sarabun-SemiBoldItalic.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-Thin";
+  src: local("Sarabun-Thin"),
+    url(./assets/fonts/sarabun/Sarabun-Thin.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Sarabun-ThinItalic";
+  src: local("Sarabun-ThinItalic"),
+    url(./assets/fonts/sarabun/Sarabun-ThinItalic.woff2) format("woff2");
+}
+
+
+/* @font-face {
+  font-family: "Sarabun-Bold";
+  src: local("Sarabun-Bold"),
+    url(./assets/fonts/sarabun/Sarabun-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Sarabun-BoldItalic";
+  src: local("Sarabun-BoldItalic"),
+    url(./assets/fonts/sarabun/Sarabun-Regular.ttf) format("truetype");
+} */
+
+@font-face {
+  font-family: "Kanit-Black";
+  src: local("Kanit-Black"),
+    url(./assets/fonts/kanit/Kanit-Black.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-BlackItalic";
+  src: local("Kanit-BlackItalic"),
+    url(./assets/fonts/kanit/Kanit-BlackItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-Bold";
+  src: local("Kanit-Bold"),
+    url(./assets/fonts/kanit/Kanit-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-BoldItalic";
+  src: local("Kanit-BoldItalic"),
+    url(./assets/fonts/kanit/Kanit-BoldItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-ExtraBold";
+  src: local("Kanit-ExtraBold"),
+    url(./assets/fonts/kanit/Kanit-ExtraBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-ExtraBoldItalic";
+  src: local("Kanit-ExtraBoldItalic"),
+    url(./assets/fonts/kanit/Kanit-ExtraBoldItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-ExtraLight";
+  src: local("Kanit-ExtraLight"),
+    url(./assets/fonts/kanit/Kanit-ExtraLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-ExtraLightItalic";
+  src: local("Kanit-ExtraLightItalic"),
+    url(./assets/fonts/kanit/Kanit-ExtraLightItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-Italic";
+  src: local("Kanit-Italic"),
+    url(./assets/fonts/kanit/Kanit-Italic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-Light";
+  src: local("Kanit-Light"),
+    url(./assets/fonts/kanit/Kanit-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-LightItalic";
+  src: local("Kanit-LightItalic"),
+    url(./assets/fonts/kanit/Kanit-LightItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-Medium";
+  src: local("Kanit-Medium"),
+    url(./assets/fonts/kanit/Kanit-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-MediumItalic";
+  src: local("Kanit-MediumItalic"),
+    url(./assets/fonts/kanit/Kanit-MediumItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-Regular";
+  src: local("Kanit-Regular"),
+    url(./assets/fonts/kanit/Kanit-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-SemiBold";
+  src: local("Kanit-SemiBold"),
+    url(./assets/fonts/kanit/Kanit-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-SemiBoldItalic";
+  src: local("Kanit-SemiBoldItalic"),
+    url(./assets/fonts/kanit/Kanit-SemiBoldItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-Thin";
+  src: local("Kanit-Thin"),
+    url(./assets/fonts/kanit/Kanit-Thin.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Kanit-ThinItalic";
+  src: local("Kanit-ThinItalic"),
+    url(./assets/fonts/kanit/Kanit-ThinItalic.ttf) format("truetype");
+}
+
+pre {
+  background: #ccc;
+  border: 1px solid tomato;
+  padding: 1em;
+  max-width: 100%;
+  overflow-x: auto;
+}

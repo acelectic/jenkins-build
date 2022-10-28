@@ -1,0 +1,11 @@
+FROM node:16.13.1-alpine3.12
+
+ENV ROOT=/app
+RUN apk add --update --no-cache bash
+RUN mkdir -p ${ROOT}
+
+WORKDIR ${ROOT}
+
+COPY . . 
+
+RUN yarn install

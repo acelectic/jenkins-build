@@ -1,0 +1,38 @@
+image: docker:latest
+
+before_script:
+  - if [[ $CI_BUILD_REF_NAME == "master" ]]; then export BUILD_FOR_ENV=prod; elif [[ $CI_BUILD_REF_NAME == "pre_production" ]]; then export BUILD_FOR_ENV=pre_prd; elif [[ $CI_BUILD_REF_NAME == "uat" ]]; then export BUILD_FOR_ENV=uat;  else  export BUILD_FOR_ENV=staging; fi
+
+stages:
+  - build
+  - deploy
+
+build_job:
+  stage: build
+  cache:
+    key: "builder"
+    paths:
+      - ./.build
+  script:
+    - echo "$DOCKER_PASSWORD" | docker login $DOCKER_REPOSITORY --username "$DOCKER_USER" --password-stdin
+    - docker pull $CI_REGISTRY_IMAGE:$BUILD_FOR_ENV || true
+    - docker build --build-arg APP_ENV=$BUILD_FOR_ENV --cache-from $CI_REGISTRY_IMAGE --tag $CI_REGISTRY_IMAGE:$BUILD_FOR_ENV .
+    - docker push $CI_REGISTRY_IMAGE:$BUILD_FOR_ENV
+  after_script:
+    - docker logout
+    - docker system prune -f
+  only:
+    - staging
+
+deploy_job_staging:
+  stage: deploy
+  image: kroniak/ssh-client
+  before_script:
+    - eval "$(ssh-agent -s)"
+    - ssh-add <(echo "$SSH_PRIVATE_KEY_STAGING")
+    - mkdir -p ~/.ssh
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+  script:
+    - ssh "$DEPLOY_USER"@moveplus.dynu.net -p 222 "cd /home/$DEPLOY_USER/docker-cpall-dev/backoffice-web-react; git pull origin staging"
+  only:
+    - staging

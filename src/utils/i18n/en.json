@@ -1,0 +1,252 @@
+{
+  "table": {
+    "rowsPerPageLabel": "Rows per page",
+    "of": "of",
+    "index": "NO.",
+    "employeeId": "Employee ID",
+    "name": "Name",
+    "department": "Department",
+    "field": "Field",
+    "position": "Position",
+    "active": "Status",
+    "statusActive": "Active",
+    "statusNotActive": "Not Active"
+  },
+  "drawer": {
+    "home": "Home",
+    "myAspiration": "My Career Aspiration",
+    "myIdp": "My IDP",
+    "idpReview": "IDP Review",
+    "myCapability": "My Capability",
+    "admin": "Admin",
+    "manual": "IDP System Manual",
+    "wiki": "Wiki",
+    "logout": "Log out"
+  },
+  "wiki": {
+    "title": "Welcome to Wiki"
+  },
+  "user": {
+    "selectField": "Field",
+    "department": "Department",
+    "search": "Search Employee ID / Employee Name",
+    "title": "User"
+  },
+  "userDetailBank": {
+    "text": "No Information"
+  },
+  "userDetail": {
+    "general": "General Information",
+    "role": "Role",
+    "generalInformation": "General Information",
+    "addRole": "Add Role"
+  },
+  "userEdit": {
+    "cancelButton": "Cancel",
+    "confirmButton": "Save",
+    "confirmModal": "Save Edit",
+    "discard": "Discard Edit",
+    "discardDetail": "Discard information edit",
+    "saveSuccess": "Edit Success",
+    "saveUnsuccess": "Edit Unsuccess",
+    "addRole": "Search Role"
+  },
+  "role": {
+    "title": "Role",
+    "addRole": "Add Role",
+    "searchRole": "Search Role ID / Role Name",
+    "active": "Status",
+    "noData": "No data",
+    "new": {
+      "add": {
+        "success": "Add Role Success",
+        "error": "Add Role Error"
+      },
+      "title": "Role",
+      "button": {
+        "cancel": "Cancel",
+        "save": "Save"
+      },
+      "modal": {
+        "description": "To add a new role. Please press the confirm button",
+        "title": "Confirm Adding Role"
+      },
+      "delete": {
+        "user": "To delete an user. Please press the confirm button."
+      },
+      "deleteuser": {
+        "title": "Delete User"
+      }
+    },
+    "edit": {
+      "title": "Role",
+      "button": {
+        "cancel": "Cancel",
+        "save": "Save"
+      },
+      "modal": {
+        "description": "To edit a role. Please press the confirm button",
+        "title": "Confirm Editing Role"
+      },
+      "snackbar": {
+        "success": "Edit Role Success",
+        "error": "Edit Role Error"
+      },
+      "delete": {
+        "user": "To delete user. Please press the confirm button."
+      },
+      "deleteuser": {
+        "title": "Delete User"
+      }
+    },
+    "inputform": {
+      "subtitle": {
+        "role": "Role",
+        "description": "Description",
+        "status": "Status"
+      },
+      "title": {
+        "permission": "Permission"
+      },
+      "header": {
+        "employee": "Employee",
+        "general": "General"
+      },
+      "search": "Search Employee ID / Employee Name",
+      "button": {
+        "add": "Add Employee"
+      },
+      "active": "Active",
+      "notactive": "Not Active"
+    },
+    "table": {
+      "order": "NO.",
+      "employee": {
+        "id": "Employee ID",
+        "name": "Name",
+        "position": "Position",
+        "action": "Action"
+      },
+      "action": "Action"
+    },
+    "label": {
+      "total": "All",
+      "active": "Active",
+      "notActive": "Not Active"
+    },
+    "permission": {
+      "all": "Select All",
+      "choose": "Access All",
+      "validate": "Please choose a permission at least one permission."
+    },
+    "success": {
+      "add": {
+        "user": "Add User Success."
+      }
+    },
+    "error": {
+      "add": {
+        "user": "Add User Error."
+      }
+    },
+    "delete": {
+      "user": {
+        "sucess": "Delete User Success.",
+        "error": "Delete User Error."
+      },
+      "thisrole": "This role have still users",
+      "title": "Delete Role",
+      "detail": "To delete a role. Please press the delete button."
+    },
+    "name": {
+      "validate": "Please enter role name."
+    },
+    "description": {
+      "validate": "Please enter a description."
+    }
+  },
+  "roleList": {
+    "No": "NO.",
+    "role": "Role",
+    "active": "Active",
+    "notActive": "Not Active"
+  },
+  "roleDetail": {
+    "roleName": "Role",
+    "description": "Description",
+    "permission": "Permission",
+    "employee": "Employee",
+    "searchEmployee": "Search employee ID",
+    "No": "NO.",
+    "employeeId": "Employee ID",
+    "name": "Name",
+    "position": "Position",
+    "genaral": "Genaral",
+    "store": "store"
+  },
+  "UserEdit": {
+    "saveConfirmDetail": "Confirm information save"
+  },
+  "modal": {
+    "buttonClose": "Close",
+    "buttonConfirm": "Confirm",
+    "buttonCancel": "Cancel",
+    "buttonDelete": "Delete"
+  },
+  "permission": {
+    "feathers": {
+      "name": {
+        "Role": "Role",
+        "User": "User"
+      }
+    },
+    "actions": {
+      "create": "CREATE",
+      "update": "UPDATE",
+      "delete": "DELETE",
+      "read": "READ"
+    },
+    "subjects": {
+      "name": {
+        "role": "role",
+        "user": "user"
+      }
+    }
+  },
+  "roles": {
+    "delete": {
+      "role": "Delete Role Success"
+    }
+  },
+  "please-insert-name-kpi-library": "กรุณากรอกชื่อเป้าหมาย",
+  "please-insert-description-kpi-library": "กรุณากรอกรายละเอียดวิธีการวัดเป้าหมาย",
+  "please-insert-category": "กรุณาเลือกหมวดหมู่",
+  "please-insert-name-category": "กรุณากรอกชื่อหมวดหมู่",
+  "table-store": "Store",
+  "percent": "Percent",
+  "call": "Call",
+  "ppm": "PPM",
+  "sku": "SKU",
+  "person": "Person",
+  "time": "Time",
+  "score": "Score",
+  "project": "Project",
+  "bath": "Bath",
+  "subject": "Subject",
+  "million_baht": "Million Baht",
+  "million_bath": "Million Baht",
+  "day": "Day",
+  "date": "Date",
+  "branch": "Branch",
+  "other": "Other",
+  "full_time": "full time",
+  "part_time": "part time",
+  "kpiTypeTitle": "KpiType",
+  "nameTitle": "Name",
+  "weightTitle": "Weight",
+  "actualTitle": "Actual",
+  "targetTitle": "Target",
+  "countTitle": "Count",
+  "company":"Company",
+  "mgr_view":"MgrView"
+}

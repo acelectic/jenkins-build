@@ -1,0 +1,276 @@
+{
+  "table": {
+    "rowsPerPageLabel": "จำนวนรายการต่อหน้า",
+    "of": "จาก",
+    "index": "ลำดับ",
+    "employeeId": "รหัสพนักงาน",
+    "name": "ชื่อ",
+    "department": "ฝ่ายงาน",
+    "field": "สายงาน",
+    "position": "ตำแหน่งงาน",
+    "active": "สถานะ",
+    "statusActive": "ใช้งาน",
+    "statusNotActive": "ไม่ใช้งาน"
+  },
+  "drawer": {
+    "home": "หน้าแรก",
+    "myAspiration": "เลือกตำแหน่งที่สนใจ",
+    "myIdp": "วางแผนพัฒนารายบุคคล (IDP)",
+    "idpReview": "ประเมินผล IDP",
+    "myCapability": "บันทึกการพัฒนาของฉัน",
+    "admin": "สำหรับ Admin",
+    "manual": "คู่มือการใช้งาน",
+    "wiki": "วิกิ (Wiki)",
+    "logout": "ออกจากระบบ"
+  },
+  "wiki": {
+    "title": "ยินดีต้อนรับสู้ห้องเชือด"
+  },
+  "user": {
+    "selectField": "สายงาน",
+    "department": "ฝ่ายงาน",
+    "search": "ค้นหารหัส/ชื่อพนักงาน",
+    "title": "ดูข้อมูลพนักงาน"
+  },
+  "userDetailBank": {
+    "text": "ไม่มีข้อมูล"
+  },
+  "userDetail": {
+    "general": "ข้อมูลทั่วไป",
+    "role": "บทบาท",
+    "generalInformation": "ข้อมูลทั่วไป",
+    "addRole": "เพิ่มบทบาท"
+  },
+  "userEdit": {
+    "cancelButton": "ยกเลิก",
+    "confirmButton": "บันทึก",
+    "confirmModal": "บันทึกการแก้ไข",
+    "discard": "ยกเลิกแก้ไข",
+    "discardDetail": "ยกเลิกแก้ไขข้อมูล",
+    "saveSuccess": "แก้ไขข้อมูลสำเร็จ",
+    "saveUnsuccess": "แก้ไขไม่สำเร็จ",
+    "addRole": "ค้นหารหัส/ชื่อบทบาท"
+  },
+  "role": {
+    "addRole": "เพิ่มบทบาท",
+    "searchRole": "ค้นหารหัส / ชื่อบทบาท",
+    "active": "สถานะ",
+    "noData": "ไม่มีข้อมูล",
+    "new": {
+      "add": {
+        "success": "เพิ่มบทบาทสำเร็จ",
+        "error": "เพิ่มบทบาทไม่สำเร็จ"
+      },
+      "title": "บทบาท",
+      "button": {
+        "cancel": "ยกเลิก",
+        "save": "บันทึก"
+      },
+      "modal": {
+        "description": "หากต้องการเพิ่มบทบาท กรุณากดปุ่มยืนยัน",
+        "title": "ยืนยันการเพิ่มบทบาท"
+      },
+      "delete": {
+        "user": "หากต้องการลบพนักงาน กรุณากดปุ่มยืนยัน"
+      },
+      "deleteuser": {
+        "title": "ลบพนักงาน"
+      }
+    },
+    "edit": {
+      "title": "บทบาท",
+      "button": {
+        "cancel": "ยกเลิก",
+        "save": "บันทึก"
+      },
+      "modal": {
+        "description": "หากต้องการแก้ไขบทบาท กรุณากดปุ่มยืนยัน",
+        "title": "ยืนยันการแก้ไขบทบาท"
+      },
+      "snackbar": {
+        "success": "แก้ไขบทบาทสำเร็จ",
+        "error": "แก้ไขบทบาทไม่สำเร็จ"
+      },
+      "delete": {
+        "user": "หากต้องการลบพนักงาน กรุณากดปุ่มยืนยัน"
+      },
+      "deleteuser": {
+        "title": "ลบพนักงาน"
+      }
+    },
+    "inputform": {
+      "subtitle": {
+        "role": "บทบาท",
+        "description": "รายละเอียด",
+        "status": "สถานะ"
+      },
+      "title": {
+        "permission": "สิทธิการใช้งาน"
+      },
+      "header": {
+        "employee": "พนักงาน",
+        "general": "ข้อมูลทั่วไป"
+      },
+      "search": "ค้นหารหัส / ชื่อพนักงาน",
+      "button": {
+        "add": "เพิ่มพนักงาน"
+      },
+      "active": "ใช้งาน",
+      "notactive": "ไม่ใช้งาน"
+    },
+    "table": {
+      "order": "ลำดับ",
+      "employee": {
+        "id": "รหัสพนักงาน",
+        "name": "ชื่อ",
+        "position": "ตำแหน่งงาน",
+        "action": "การกระทำ"
+      },
+      "action": "การกระทำ"
+    },
+    "title": "บทบาท",
+    "label": {
+      "total": "ทั้งหมด",
+      "active": "ใช้งาน",
+      "notActive": "ไม่ใช้งาน"
+    },
+    "permission": {
+      "all": "เลือกทั้งหมด",
+      "choose": "ทุกสิทธิ",
+      "validate": "กรุณาเลือกสิทธิการใช้งานอย่างน้อย 1 สิทธิ"
+    },
+    "success": {
+      "add": {
+        "user": "เพิ่มพนักงานสำเร็จ"
+      }
+    },
+    "error": {
+      "add": {
+        "user": "เพิ่มพนักงานไม่สำเร็จ"
+      }
+    },
+    "delete": {
+      "user": {
+        "sucess": "ลบพนักงานสำเร็จ",
+        "error": "ลบพนักงานไม่สำเร็จ"
+      },
+      "thisrole": "บทบาทนี้ยังมีผู้ใช้งานอยู่",
+      "title": "ลบบทบาท",
+      "detail": "คุณยืนยันที่จะลบบทบาทนี้หรือไม่?"
+    },
+    "name": {
+      "validate": "กรุณากรอกชื่อบทบาท"
+    },
+    "description": {
+      "validate": "กรุณากรอกรายละเอียด"
+    }
+  },
+  "roleList": {
+    "No": "ลำดับ",
+    "role": "บทบาท",
+    "active": "ใช้งาน",
+    "notActive": "ไม่ใช้งาน"
+  },
+  "roleDetail": {
+    "roleName": "บทบาท",
+    "description": "รายละเอียด",
+    "permission": "สิทธิ์การใช้งาน",
+    "employee": "พนักงาน",
+    "searchEmployee": "ค้นหารหัสพนักงาน",
+    "No": "ลำดับ",
+    "employeeId": "รหัสพนักงาน",
+    "name": "ชื่อ - นามสกุล",
+    "position": "ตำแหน่ง",
+    "genaral": "ข้อมูลทั่วไป",
+    "store": "หน่วยงาน"
+  },
+  "UserEdit": {
+    "saveConfirmDetail": "ยืนยันการแก้ไขข้อมูล"
+  },
+  "modal": {
+    "buttonClose": "ปิด",
+    "buttonConfirm": "ยืนยัน",
+    "buttonCancel": "ยกเลิก",
+    "buttonDelete": "ลบ"
+  },
+  "permission": {
+    "feathers": {
+      "name": {
+        "Manage Role": "บทบาท",
+        "Manage User": "ดูข้อมูลพนักงาน",
+        "Manage Forms": "จัดการแบบฟอร์มการประเมิน",
+        "Report": "ดูรายงานผลการประเมิน",
+        "Dashboard": "แดชบอร์ดของฉัน",
+        "Track Assessment": "ติดตามการประเมินที่ดำเนินการอยู่",
+        "Manage Kpi Assignment": "สร้างเป้าหมายให้พนักงาน",
+        "Manage Calibration": "จัดการวงปรับเทียบผลงาน",
+        "Manage Template": "จัดการเทมเพลตการประเมิน",
+        "Manage Kpi Library": "Kpi Library",
+        "Manage Grade": "การจัดการโควต้าเกรด"
+      }
+    },
+    "actions": {
+      "create": "เพิ่ม",
+      "update": "แก้ไข",
+      "delete": "ลบ",
+      "read": "ดู",
+      "report": "ออกรายงาน",
+      "calibrate": "ค่าตั้งต้น HR ของวงปรับเทียบผลงาน",
+      "notification_user_data": "รับการแจ้งเตือนปัญหาเกี่ยวกับข้อมูลผู้ใช้งาน"
+    },
+    "subjects": {
+      "name": {
+        "manage_role": "บทบาท",
+        "manage_user": "ดูข้อมูลพนักงาน",
+        "one_year": "ครบรอบ 1 ปี",
+        "kpi": "การประเมินประจำไตรมาส",
+        "probation": "ทดลองงาน",
+        "report": "ดูรายงานผลการประเมิน",
+        "dashboard": "แดชบอร์ดของฉัน",
+        "manage_kpi_assignment": "สร้างเป้าหมายให้พนักงาน",
+        "manage_calibration": "จัดการวงปรับเทียบผลงาน",
+        "manage_template": "จัดการเทมเพลตการประเมิน",
+        "manage_kpi_library": "Kpi Library",
+        "manage_grade": "การจัดการโควต้าเกรด",
+        "behavior": "เทมเพลตแบบกำหนดหัวข้อให้",
+        "scale": "เทมเพลตเปล่าที่ให้พนักงานสร้างหัวข้อเอง"
+      }
+    }
+  },
+  "roles": {
+    "delete": {
+      "role": "ลบบทบาทสำเร็จ"
+    }
+  },
+  "please-insert-name-category": "กรุณากรอกชื่อหมวดหมู่\t",
+  "please-insert-category": "\tกรุณาเลือกหมวดหมู่",
+  "please-insert-description-kpi-library": "กรุณากรอกรายละเอียดวิธีการวัดเป้าหมาย\t",
+  "please-insert-name-kpi-library": "กรุณากรอกชื่อเป้าหมาย",
+  "table-store": "สาขา",
+  "percent": "%",
+  "call": "Call",
+  "ppm": "PPM",
+  "sku": "SKU",
+  "person": "คน",
+  "time": "ครั้ง",
+  "score": "คะแนน",
+  "project": "โปรเจค",
+  "bath": "บาท",
+  "subject": "เรื่อง",
+  "million_baht": "ล้านบาท",
+  "million_bath": "ล้านบาท",
+  "day": "วัน",
+  "date": "วันที่",
+  "branch": "สาขา",
+  "other": "อื่นๆ",
+  "full_time": "full time",
+  "part_time": "part time",
+  "kpiTypeTitle": "ประเภท",
+  "nameTitle": "ชื่อเป้าหมาย",
+  "weightTitle": "น้ำหนัก",
+  "actualTitle": "ค่าที่ทำได้จริง",
+  "targetTitle": "ค่าเป้าหมาย",
+  "countTitle": "จำนวนพนักงานที่ได้รับเป้าหมาย",
+  "company": "องค์กร",
+  "mgr_view": "หน่วยงาน"
+}

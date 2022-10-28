@@ -1,0 +1,78 @@
+{
+  "extends": [
+    "react-app",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "off" /* "warn" */,
+    "semi": "off",
+    "import/no-unresolved": "off",
+    "react/function-component-definition": "off",
+    "import/extensions": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": [
+      "off" /* "warn" */
+    ],
+    "react/jsx-filename-extension": [
+      "off" /* "warn" */,
+      {
+        "extensions": [
+          ".tsx"
+        ]
+      }
+    ],
+    "no-shadow": "off",
+    "@typescript-eslint/no-explicit-any": "warn" /* "warn" */,
+    "@typescript-eslint/no-shadow": [
+      "off"
+    ],
+    "@typescript-eslint/explicit-function-return-type": [
+      "off"
+    ],
+    "react/react-in-jsx-scope": 0,
+    "react-hooks/rules-of-hooks": "off" /* "error" */,
+    "react-hooks/exhaustive-deps": "off" /* "warn" */,
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/prop-types": "off",
+    "operator-linebreak": [
+      "off" /* "error" */,
+      "after",
+      {
+        "overrides": {
+          "?": "before",
+          ":": "before"
+        }
+      }
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "debug",
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "indent": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off" /* "error" */,
+    "no-underscore-dangle": "off",
+    "react/jsx-props-no-spreading": "off",
+    "@typescript-eslint/naming-convention": [
+      "off" /* "warn" */,
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
+        }
+      }
+    ]
+  }
+}
