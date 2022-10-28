@@ -7,10 +7,11 @@ pipeline {
     }
 
     environment {
-        APP = 'jenkins-build'
-        DOCKER_REGISTRY = 'acelectic'
-        DOCKER_IMAGE = "${DOCKER_REGISTRY}/${APP}"
-        REGISTRY_CREDENTIALS = "docker-hub-token"
+        APP = 'acelectic'
+        PROJECT = 'jenkins-build'
+        DOCKER_REGISTRY = 'registry-1.docker.io/v2'
+        DOCKER_IMAGE = "${APP}/${PROJECT}"
+        REGISTRY_CREDENTIALS = "docker-hub-registry"
         GITHUB_TOKEN = credentials('github-token')
         GIT_COMMIT_VERSION = "${env.GIT_COMMIT}"
     }
