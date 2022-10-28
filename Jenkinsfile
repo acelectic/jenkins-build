@@ -1,5 +1,13 @@
-node {
+pipeline {
     agent { label 'jenkins_agent' }
+
+    tools {
+        nodejs "node-16"
+    }
+
+    environment {
+        GIT_COMMIT_VERSION = "${env.GIT_COMMIT}"
+    }
 
     stages {
 
