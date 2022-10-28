@@ -1,13 +1,5 @@
-pipeline {
+node {
     agent { label 'jenkins_agent' }
-
-    tools {
-        nodejs "Node LTS"
-    }
-
-    environment {
-        GIT_COMMIT_VERSION = "${env.GIT_COMMIT}"
-    }
 
     stages {
 
