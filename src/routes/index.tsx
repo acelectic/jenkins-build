@@ -1,23 +1,6 @@
 import async from "../components/Async"
 import { RouteType } from "../types/routes"
-
-import {
-  // BookOpen,
-  // Briefcase,
-  // Calendar as CalendarIcon,
-  // CheckSquare,
-  // CreditCard,
-  // Grid,
-  // Heart,
-  // Layout,
-  // List,
-  // Map,
-  // Monitor,
-  // ShoppingCart,
-  // PieChart,
-  Sliders,
-  Users,
-} from "react-feather"
+import { Sliders, Users } from "react-feather"
 import paths from "../constants/paths"
 import Icon from "../components/common/Icon"
 import { PERMISSIONS } from "../services/enum-typed"
@@ -25,7 +8,6 @@ import { PERMISSIONS } from "../services/enum-typed"
 const Wiki = async(() => import("../modules/Wiki"))
 const User = async(() => import("../modules/User"))
 const Role = async(() => import("../modules/Role"))
-// const Profile = async(() => import("../modules/Profile"))
 
 const Template = async(() => import("../modules/Template"))
 const QuotaGrade = async(() => import("../modules/ManageGrade/QuotaGrade"))
@@ -118,14 +100,6 @@ const trackAssessmentRoutes = {
   children: null,
   header: "การประเมิน",
 }
-
-// const probationRoutes = {
-//   id: "Probation",
-//   path: paths.probation(),
-//   icon: <Sliders />,
-//   component: Probation,
-//   children: null,
-// }
 
 const kpiLibraryRoutes = {
   id: "KPI Library",
@@ -249,32 +223,6 @@ const dashboardsRoutes: RouteType = {
   children: null,
 }
 
-// const dashboardsRoutes = {
-//   id: "Dashboard",
-//   path: "/dashboard",
-//   header: "Pages",
-//   icon: <Sliders />,
-//   containsHome: true,
-//   children: [
-//     {
-//       path: "/dashboard/default",
-//       name: "Default",
-//       component: Default,
-//     },
-//     {
-//       path: "/dashboard/analytics",
-//       name: "Analytics",
-//       component: Analytics,
-//     },
-//     {
-//       path: "/dashboard/saas",
-//       name: "SaaS",
-//       component: SaaS,
-//     },
-//   ],
-//   component: null,
-// }
-
 const authRoutes = {
   id: "Auth",
   path: paths.auth(),
@@ -296,8 +244,6 @@ export const dashboardLayoutRoutes = [
   dashboardsRoutes,
   userRoutes,
   roleRoutes,
-  // profileRoutes,
-  //kpiTemplateRoutes,
   templateRoutes,
   setFormRoutes,
   kpiLibraryRoutes,
@@ -312,21 +258,6 @@ export const dashboardLayoutRoutes = [
   manageKpiRoutes,
   trackAssessmentRoutes,
   userNotFoundRoutes,
-  // calibrationHistoryRoutes,
-  // pagesRoutes,
-  // projectsRoutes,
-  // orderRoutes,
-  // invoiceRoutes,
-  // tasksRoutes,
-  // calendarRoutes,
-  // componentsRoutes,
-  // chartRoutes,
-  // formsRoutes,
-  // tablesRoutes,
-  // iconsRoutes,
-  // mapsRoutes,
-  // documentationRoutes,
-  // changelogRoutes,
 ]
 
 // Routes using the Auth layout
@@ -346,31 +277,8 @@ export const protectedRoutes = [
 export const sidebarRoutes: RouteType[] = [
   dashboardsRoutes,
   reportRoutes,
-  //roleRoutes,
   userRoutes,
   trackAssessmentRoutes,
   manageKpiRoutes,
   manageCalibrationRoutes,
-  //templateRoutes,
-  //setFormRoutes,
-  //kpiLibraryRoutes,
-  //manageGradeRoutes,
-  // wikiRoutes,
-  //kpiTemplateRoutes,
-  //kpiPeriodTemplateCreate,
-  // pagesRoutes,
-  // projectsRoutes,
-  // orderRoutes,
-  // invoiceRoutes,
-  // tasksRoutes,
-  // calendarRoutes,
-  // authRoutes,
-  // componentsRoutes,
-  // chartRoutes,
-  // formsRoutes,
-  // tablesRoutes,
-  // iconsRoutes,
-  // mapsRoutes,
-  // documentationRoutes,
-  // changelogRoutes,
 ]
