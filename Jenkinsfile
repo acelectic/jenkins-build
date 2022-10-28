@@ -11,7 +11,7 @@ pipeline {
         PROJECT = 'jenkins-build'
         DOCKER_REGISTRY = 'registry-1.docker.io/v2'
         DOCKER_IMAGE = "${APP}/${PROJECT}"
-        REGISTRY_CREDENTIALS = "docker-hub-registry"
+        REGISTRY_CREDENTIALS = ("docker-hub-registry")
         GITHUB_TOKEN = credentials('github-token')
         GIT_COMMIT_VERSION = "${env.GIT_COMMIT}"
     }
@@ -21,19 +21,19 @@ pipeline {
     // }
 
     stages {
-        stage('Debug') {
-            steps {
+    //     stage('Debug') {
+    //         steps {
 
-                // git branch: 'main', url: 'https://github.com/acelectic/jenkins-build.git'
-                // scmSkip(deleteBuild: false)
-                script {
-                    sh """
-                    yarn install
-                    """
-                }
+    //             // git branch: 'main', url: 'https://github.com/acelectic/jenkins-build.git'
+    //             // scmSkip(deleteBuild: false)
+    //             script {
+    //                 sh """
+    //                 yarn install
+    //                 """
+    //             }
 
-        }
-    }
+    //     }
+    // }
      
     stage('Install') {
         when {
@@ -105,6 +105,21 @@ pipeline {
         }
     }
 
+    stage('Release') {
+        when { changeRequest target: 'main' }
+        steps {
+            script {
+                sh '''
+                yarn install
+                npx semantic-release
+                '''
+                env.TARGET_TAG = sh(script:'cat VERSION || echo ""', returnStdout: true).trim()
+
+                echo "VERSION: [$env.TARGET_TAG]"
+            }
+        }
+    }
+
     stage('Build Docker Image') {
         when { changeRequest target: 'main' }
         steps {
@@ -112,11 +127,6 @@ pipeline {
                 sh '''
                 echo $VERSION
                 '''
-                sh '''
-                yarn install
-                npx semantic-release
-                '''
-                env.TARGET_TAG = sh(script:'cat VERSION || echo ""', returnStdout: true).trim()
 
                 docker.withRegistry("https://${DOCKER_REGISTRY}", REGISTRY_CREDENTIALS) {
                     dockerImage = docker.build("${DOCKER_IMAGE}:${GIT_COMMIT_VERSION}", "--build-arg VERSION TARGET_TAG ./dockerfiles")
