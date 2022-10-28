@@ -6,6 +6,7 @@ pipeline {
     }
 
     environment {
+        GITHUB_TOKEN = credentials('github-token')
         GIT_COMMIT_VERSION = "${env.GIT_COMMIT}"
     }
 
