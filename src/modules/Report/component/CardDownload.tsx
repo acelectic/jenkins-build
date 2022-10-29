@@ -16,7 +16,7 @@ const QuarterNameStyled = styled.div`
   margin: 16px 0px;
 `
 
-export type CardDownloadProps = {}
+export type ICardDownloadProps = {}
 
 const CardDownload = () => {
   const { t } = useTranslation()
