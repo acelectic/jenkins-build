@@ -1,7 +1,7 @@
 import styled from "styled-components/macro"
 import { Box } from "@mui/material"
 import EditRoleLeftField, {
-  EditRoleFormValues,
+  IEditRoleFormValues,
 } from "../component/fields/edit-fields/EditRoleLeftField"
 import {
   useEditRole,
@@ -99,8 +99,8 @@ const RoleEdit = () => {
   const [isOpenEditModal, setIsOpenEditModal] = useState(false)
 
   const paramsEditRole = {
-    roleDetail: { isSelected: true, roleId: roleId },
-    users: { isSelected: false, roleId: roleId, limit: pageSize, page: page },
+    roleDetail: { isSelected: true, roleId },
+    users: { isSelected: false, roleId, limit: pageSize, page: page },
     searchUsers: {
       isSelected: true,
       limit: 20,
@@ -181,7 +181,7 @@ const RoleEdit = () => {
 
   const { mutate: editRole } = useEditRole(roleId)
   const onConfirmEditRole = useCallback(
-    (values: EditRoleFormValues) => {
+    (values: IEditRoleFormValues) => {
       const permissionList = Object.entries(values.permissions)
         .filter(([, permission]) => !!permission)
         .map(([item]) => item)
@@ -265,8 +265,8 @@ const RoleEdit = () => {
   }, [goBack])
 
   const onValidate = useCallback(
-    (values: EditRoleFormValues) => {
-      const errors: IFormValueErrors<EditRoleFormValues> = {}
+    (values: IEditRoleFormValues) => {
+      const errors: IFormValueErrors<IEditRoleFormValues> = {}
 
       if (!values.name) {
         set(errors, "name", t("role.name.validate"))
