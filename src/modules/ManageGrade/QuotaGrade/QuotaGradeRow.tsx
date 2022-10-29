@@ -32,33 +32,33 @@ const PencilEdit = styled.div`
   cursor: pointer;
 `
 
-type HandleEditGradeModalProps = {
+type IHandleEditGradeModalProps = {
   onOk: () => void
   fieldName: string
   setCurrentEditedId: React.Dispatch<React.SetStateAction<string>>
   invalid: boolean
 }
 
-const QuotaGradeRow = (props: HandleEditGradeModalProps) => {
+const QuotaGradeRow = (props: IHandleEditGradeModalProps) => {
   const { onOk, fieldName, setCurrentEditedId, invalid } = props
 
-  const [openEditDetailModal, setOpenEditDetailModal] = useState<boolean>(false)
+  const [isOpenEditDetailModal, setIsOpenEditDetailModal] = useState<boolean>(false)
 
   const onOpenModal = useCallback(() => {
-    setOpenEditDetailModal(true)
+    setIsOpenEditDetailModal(true)
   }, [])
 
   const onCloseModal = useCallback(() => {
-    setOpenEditDetailModal(false)
+    setIsOpenEditDetailModal(false)
   }, [])
 
   const { t } = useTranslation()
 
   return (
     <ListRow>
-      <Field name={`${fieldName}`}>
+      <Field<IQuotaGradeType> name={`${fieldName}`}>
         {({ input }) => {
-          const quotaValue: IQuotaGradeType = input.value
+          const quotaValue = input.value
           return (
             <>
               <Sarabun type="Subtitle1">{t(`${quotaValue.name}`)}</Sarabun>
@@ -76,8 +76,8 @@ const QuotaGradeRow = (props: HandleEditGradeModalProps) => {
                 </PencilEdit>
               </Authorize>
               <EditGradeDetailModal
-                showModal={openEditDetailModal}
-                setShowModal={setOpenEditDetailModal}
+                showModal={isOpenEditDetailModal}
+                setShowModal={setIsOpenEditDetailModal}
                 onClose={onCloseModal}
                 onOk={onOk}
                 fieldName={fieldName}
