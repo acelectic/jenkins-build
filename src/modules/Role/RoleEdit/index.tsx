@@ -99,8 +99,8 @@ const RoleEdit = () => {
   const [isOpenEditModal, setIsOpenEditModal] = useState(false)
 
   const paramsEditRole = {
-    roleDetail: { isSelected: true, roleId: roleId },
-    users: { isSelected: false, roleId: roleId, limit: pageSize, page: page },
+    roleDetail: { isSelected: true, roleId },
+    users: { isSelected: false, roleId, limit: pageSize, page: page },
     searchUsers: {
       isSelected: true,
       limit: 20,
