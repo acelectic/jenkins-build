@@ -7,6 +7,7 @@ import { CreateRoleResponse, RoleDetailItem } from "../../../../../services/role
 import PermissionField from "../PermissionField"
 import Sarabun from "../../../../../components/common/Sarabun"
 import { GRAYSCALE_DARKGRAY_40 } from "../../../../../constants/colors"
+import { values } from "lodash"
 
 const GridLayout = styled.div`
   display: flex;
@@ -21,24 +22,24 @@ const Divider = styled.div`
   background-color: ${GRAYSCALE_DARKGRAY_40};
 `
 
-export type EditRoleFormValues = {
+export type IEditRoleFormValues = {
   name: string
   description: string
   isActive: boolean
   permissions: Record<string, boolean>
 }
 
-export type RoleResult = {
+export type IRoleResult = {
   roleDetail: RoleDetailItem | undefined
   change: Function
   permissionData?: CreateRoleResponse
 }
 
-export type RoleID = { roleId: string }
+export type IRoleID = { roleId: string }
 
-export type RoleDetailResult = RoleResult & RoleID
+export type IRoleDetailResult = IRoleResult & IRoleID
 
-const EditRoleLeftField = (props: RoleDetailResult) => {
+const EditRoleLeftField = (props: IRoleDetailResult) => {
   const { t } = useTranslation()
   const { change, permissionData } = props
 
@@ -74,7 +75,7 @@ const EditRoleLeftField = (props: RoleDetailResult) => {
         .map((d, index) => {
           return (
             <PermissionField
-              key={index}
+              key={values(d).join("-")}
               permissionName={d.featureName}
               subjects={d.subjects}
               change={change}
