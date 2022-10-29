@@ -1,6 +1,6 @@
 pipeline {
-    // agent { label 'jenkins_agent' }
-    agent any
+    agent { label 'jenkins_agent' }
+    // agent any
 
     tools {
         nodejs "node-16"
@@ -43,7 +43,7 @@ pipeline {
             }
         }
         steps {
-            // scmSkip(deleteBuild: false)
+            scmSkip(deleteBuild: false)
             script {
                 sh """
                 yarn install
