@@ -17,20 +17,21 @@ pipeline {
         GIT_COMMIT_VERSION = "${env.GIT_COMMIT}"
     }
 
-    // options {
-    //     skipDefaultCheckout(true)
-    // }
+    options {
+        skipDefaultCheckout(true)
+    }
 
     stages {
         stage('Debug') {
             steps {
-                // git branch: 'main', url: 'https://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@github.com/acelectic/jenkins-build.git'
+                // git branch: 'main', url: 'https://github.com/acelectic/jenkins-build.git'
                 // scmSkip(deleteBuild: false)
                 script {
                     sh '''
                     yarn install
                     '''
                 }
+                // git branch: 'main', url: 'https://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@github.com/acelectic/jenkins-build.git'
             }
         }
 
