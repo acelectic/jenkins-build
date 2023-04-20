@@ -43,7 +43,7 @@ pipeline {
                 }
             }
             steps {
-                scmSkip(deleteBuild: false)
+                // scmSkip(deleteBuild: false)
                 script {
                     sh '''
                         yarn install
