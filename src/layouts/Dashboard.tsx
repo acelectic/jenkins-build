@@ -99,9 +99,7 @@ const Dashboard: React.FC<DashboardPropsType> = ({ children, routes, width }) =>
       <AppContent>
         <Header onDrawerToggle={handleDrawerToggle} />
         <MainContent /* p={isWidthUp("lg", width) ? 12 : 5} */ p={12}>{children}</MainContent>
-        {/* <Footer /> */}
       </AppContent>
-      {/* <Settings /> */}
     </Root>
   )
 }
