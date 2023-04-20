@@ -110,7 +110,7 @@ pipeline {
                 script {
                     sh '''
                         yarn install
-                        npx semantic-release --no-ci
+                        npx semantic-release
                     '''
                     env.TARGET_TAG = sh(script:'cat VERSION || echo ""', returnStdout: true).trim()
                     echo "VERSION: [$env.TARGET_TAG]"
