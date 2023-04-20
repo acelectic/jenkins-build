@@ -28,7 +28,7 @@ pipeline {
                 // scmSkip(deleteBuild: false)
                 script {
                     sh '''
-                    yarn install
+                        yarn install
                     '''
                 }
                 // git branch: 'main', url: 'https://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@github.com/acelectic/jenkins-build.git'
@@ -43,11 +43,11 @@ pipeline {
                 }
             }
             steps {
-                // scmSkip(deleteBuild: false)
+                scmSkip(deleteBuild: false)
                 script {
                     sh '''
-                yarn install
-                '''
+                        yarn install
+                    '''
                 }
             }
         }
@@ -106,7 +106,12 @@ pipeline {
         // }
 
         stage('Release') {
-            when { changeRequest target: 'main' }
+            when {
+                anyOf {
+                    branch 'main'
+                    branch pattern: /hotfix\/[0-9]+\.[0-9]+\.[0-9]+/, comparator: 'REGEXP'
+                }
+            }
             steps {
                 script {
                     sh '''

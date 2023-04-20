@@ -62,7 +62,6 @@ export const useOnError = () => {
       type: "error",
       message: t(message, { ...param, defaultValue: message }),
     })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 }
 
