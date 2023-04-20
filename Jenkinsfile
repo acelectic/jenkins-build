@@ -1,6 +1,6 @@
 pipeline {
-    agent { label 'jenkins_agent' }
-    // agent any
+    // agent { label 'jenkins_agent' }
+    agent any
 
     tools {
         nodejs 'node-18'
@@ -15,6 +15,7 @@ pipeline {
         GITHUB_TOKEN = credentials('github-token')
         GIT_ASKPASS = credentials('github-token')
         GIT_COMMIT_VERSION = "${env.GIT_COMMIT}"
+        GIT_REPOSITORY_URL = 'https://github.com/acelectic/jenkins-build.git'
     }
 
     options {
@@ -22,16 +23,9 @@ pipeline {
     }
 
     stages {
-        stage('Debug') {
+        stage('Checkout Git') {
             steps {
-                // git branch: 'main', url: 'https://github.com/acelectic/jenkins-build.git'
-                // scmSkip(deleteBuild: false)
-                script {
-                    sh '''
-                        yarn install
-                    '''
-                }
-                // git branch: 'main', url: 'https://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@github.com/acelectic/jenkins-build.git'
+                checkout([$class: 'GitSCM', branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-pass', url: 'https://github.com/acelectic/jenkins-build.git']]])
             }
         }
 
@@ -115,31 +109,30 @@ pipeline {
             steps {
                 script {
                     sh '''
-                yarn install
-                npx semantic-release
-                '''
+                        yarn install
+                        npx semantic-release --no-ci
+                    '''
                     env.TARGET_TAG = sh(script:'cat VERSION || echo ""', returnStdout: true).trim()
-
                     echo "VERSION: [$env.TARGET_TAG]"
                 }
             }
         }
 
-        // stage('Build Docker Image') {
-        //     when { changeRequest target: 'main' }
-        //     steps {
-        //         script {
-        //             sh '''
-        //         echo $VERSION
-        //         '''
+        stage('Build Docker Image') {
+            when { changeRequest target: 'main' }
+            steps {
+                script {
+                    sh '''
+                        echo $VERSION
+                    '''
 
-        //             docker.withRegistry("https://${DOCKER_REGISTRY}", REGISTRY_CREDENTIALS) {
-        //                 dockerImage = docker.build("${DOCKER_IMAGE}:${GIT_COMMIT_VERSION}", '--build-arg VERSION TARGET_TAG ./dockerfiles')
-        //                 dockerImage.push()
-        //             }
-        //         }
-        //     }
-        // }
+                    // docker.withRegistry("https://${DOCKER_REGISTRY}", REGISTRY_CREDENTIALS) {
+                    //     dockerImage = docker.build("${DOCKER_IMAGE}:${GIT_COMMIT_VERSION}", '--build-arg VERSION TARGET_TAG ./dockerfiles')
+                    //     dockerImage.push()
+                    // }
+                }
+            }
+        }
 
         // stage('Release') {
         //     when { branch 'main' }
