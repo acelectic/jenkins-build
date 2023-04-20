@@ -41,7 +41,6 @@ export const FallBackComponent = () => {
       }}
     >
       <MoonLoader color={PRIMARY} loading={true} size={60} />
-      {/* <CircularProgress /> */}
     </div>
   )
 }
